@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Sport",
+    "caption": "Discover the latest in footwear technology.",
+    "img_link": "https://example.com/images/shoes1.jpg",
+    "articles_link": "https://example.com/articles/shoes1",
+    "ico": "basketball"
+  },
+  {
+    "title": "Comunità",
+    "caption": "Stay connected with the newest smartwatches.",
+    "img_link": "https://example.com/images/watch1.jpg",
+    "articles_link": "https://example.com/articles/watch1",
+    "ico": "users-alt"
+  },
+  {
+    "title": "Cultura",
+    "caption": "Carry your essentials in style and sustainability.",
+    "img_link": "https://example.com/images/bag1.jpg",
+    "articles_link": "https://example.com/articles/bag1",
+    "ico": "books"
+  },
+  {
+    "title": "Educazione",
+    "caption": "Experience true wireless freedom with our earbuds.",
+    "img_link": "https://example.com/images/earbuds1.jpg",
+    "articles_link": "https://example.com/articles/earbuds1",
+    "ico": "workshop"
+  }
+]

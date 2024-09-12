@@ -1,0 +1,28 @@
+---
+export interface Props {
+  title: string;
+  imageSrc?: string;
+  caption: string;
+  link: string;
+  ico: string;
+}
+
+const { title, imageSrc, caption, link, ico } = Astro.props;
+const icoType: string = "rr";
+---
+
+<div class="card bg-primary-content w-96 rounded-none transition ease-in-out delay-150">
+  <div class="card-body rounded-none">
+    <div class="flex items-baseline gap-2">
+      <i class={`fi fi-${icoType}-${ico}`}></i>
+      <h2 class="card-title text-secondary"> {title}</h2>
+    </div>
+    <p>{caption}</p>
+    <a href={link} class="text-blue-500 hover:underline">Learn more</a>
+  </div>
+  {imageSrc && (
+    <figure>
+      <img src={imageSrc} alt={title} />
+    </figure>
+  )}
+</div>
