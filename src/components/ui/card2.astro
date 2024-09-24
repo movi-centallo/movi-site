@@ -1,0 +1,34 @@
+---
+export interface Props {
+  title: string;
+  imageSrc?: string;
+  caption: string;
+  link: string;
+  ico: string;
+}
+
+const { title, imageSrc, caption, link, ico } = Astro.props;
+const icoType: string = "rr";
+---
+<article class="group">
+  <img
+    alt={title}
+    src={imageSrc}
+    class="h-56 lg: w-full md:aspect-square rounded-xl object-cover shadow-xl transition group-hover:backdrop-blur-sm"
+  />  
+
+
+  <div class="pt-4 pl-3">
+    <div class="flex items-center gap-2">
+      <span class="text-lg font-medium text-gray-900"><i class={`fi fi-${icoType}-${ico}`}></i></span>
+      <a href="#" class="">      
+        <h3 class="text-lg font-medium text-gray-900">{title}</h3>
+      </a>
+    </div>
+
+    <p class=" line-clamp-3 text-sm/relaxed text-gray-500">
+    {caption}
+    </p>
+    
+  
+</article>

@@ -1,16 +1,17 @@
 ---
-import Card from "@components/ui/card.astro";
-import introCards from '../content/intro-cards.json';
+import Card from "@components/ui/card2.astro";
+import introCards from '../assets/intro-cards.json';
     
 ---
 
-<section class="my-20">
+<section class="my-40">
     
-    <div class="flex flex-wrap justify-center">
+    <div class="grid lg:grid-cols-2 gap-4 md:grid-cols-1">
       {introCards.map((card) => (
         <Card
           title={card.title}
           caption={card.caption}
+          imageSrc={card.img_link}
           link={card.articles_link}
           ico={card.ico}
         />

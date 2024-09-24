@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
+
 const heroImage = "/img/noi.jpg"; // Path to the image in the static folder
 ---
 
@@ -13,12 +14,15 @@ const heroImage = "/img/noi.jpg"; // Path to the image in the static folder
   - Add margin to the bottom
 -->
 <div class="hero max-h-screen py-4">
-  <div class="hero-content p-0 gap-x-20 flex-col-reverse lg:flex-row-reverse">
+  <div class="hero-content p-0 gap-x-20  flex-col-reverse lg:flex-row-reverse">
     <img
     src={heroImage}
-    class="max-h-screen rounded-lg shadow-2xl hover:scale-105 hover:bg-indigo-500 duration-300" />
+    class="max-h-screen rounded-lg shadow-xl" />
     <div>
-      <h1 class="text-5xl font-bold ">Movimento Giovanile</h1>
+      <h1 class="text-5xl font-bold">Movimento Giovanile</h1>
+      <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10"> <img src="/img/pin.gif" class="w-7 mr-1"></img>  Centallo</span>
+     
+      
       <p class="py-6">
         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
         quasi. In deleniti eaque aut repudiandae et a id nisi.
