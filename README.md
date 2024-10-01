@@ -4,6 +4,16 @@ Astroship is a free starter astro website template for saas, startups, marketing
 
 This Free Template is sponsored by [Web3Templates](https://web3templates.com)
 
+##  Feature to be developed
+- Progetto
+    [] Stato progetto: evidenziare gli eventi futuri/in programma (es. con badge)
+    [] Data inizio/fine progetto 
+    [] Sponsor/partner 
+    [] Link a foto
+    [] Connettere pagina cantoni
+- Chi siamo: da sviluppare interamente    
+
+
 ## Live Demo
 
 **[https://astroship.web3templates.com/](https://astroship.web3templates.com/)**

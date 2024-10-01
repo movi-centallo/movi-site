@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "assets/noi.jpg"; // Path to the image in the static folder
+import heroImage from "assets/noi.webp"; // Path to the image in the static folder
 ---
 
 <!-- Further improvements: 
@@ -14,6 +14,7 @@ import heroImage from "assets/noi.jpg"; // Path to the image in the static folde
     <Image
     src={heroImage}
     alt="Movi Centallo"
+    quality="high"
     
     class="max-h-screen rounded-lg shadow-xl" /> 
     <div class="flex flex-column gap-2.5 ">
