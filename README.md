@@ -11,7 +11,15 @@ This Free Template is sponsored by [Web3Templates](https://web3templates.com)
     [] Sponsor/partner 
     [] Link a foto
     [] Connettere pagina cantoni
-- Chi siamo: da sviluppare interamente    
+- Chi siamo: da sviluppare interamente 
+- Amici del movi
+    - Cinema 
+    - ACLI
+    - Comune di centallo 
+    - Proloco 
+    - Avis 
+    - Centallo Viva
+- Logo social
 
 
 ## Live Demo

@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+
+// Generate a new path for every collection entry
+export function getStaticPaths() {
+  return [
+    {params: {cat: 'sport'}},
+    {params: {cat: 'educazione'}},
+    {params: {cat: 'cultura'}},
+    {params: {cat: 'comunità'}},
+  ];
+}
+
+
+
+// Get the entry directly from the prop on render
+const { cat } = Astro.params;
+
+---
+
