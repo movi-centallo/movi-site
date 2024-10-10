@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
+import ProjectsMaster from "@components/ProjectsMaster.astro";
 
 // Generate a new path for every collection entry
 export function getStaticPaths() {
@@ -13,10 +14,42 @@ export function getStaticPaths() {
   ];
 }
 
-
-
 // Get the entry directly from the prop on render
 const { cat } = Astro.params;
 
+// Filter blog entries with 'draft: false' & date before current date
+const publishedProject = await getCollection("progetti", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+
+// Sort content entries by publication date
+publishedProject.sort(function (a, b) {
+  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+});
+
+// Debugging: Log the original array
+console.log("Before filtering:", publishedProject);
+
+// Further filter or map the entries if needed
+const filteredProjects = publishedProject.filter((project) => {
+  
+  // Ensure category exists and is a string, then convert to lowercase for comparison
+  if (project.data.category && typeof project.data.category === 'string') {
+    console.log(cat); 
+    console.log(project.data.category.toLowerCase());
+    return project.data.category.toLowerCase() === cat; // Modify 'archive' as needed
+  }
+  return true; // If category doesn't exist, keep the project (optional)
+});
+
+// Debugging: Log the filtered array
+console.log("After filtering:", filteredProjects);
+
+
+
+
+
 ---
 
+
+<ProjectsMaster entries={filteredProjects} descrizione={"Categoria: "+cat}></ProjectsMaster>
