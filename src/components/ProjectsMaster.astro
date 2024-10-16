@@ -1,23 +1,42 @@
 ---
 import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
- 
+
+
+import Event from "../components/event.astro";
+import { contentfulClient } from "../lib/contentful";
+import type Eventi from "../lib/types.ts";
+
 const { entries, descrizione } = Astro.props;
 
 
+const events = await contentfulClient.getEntries<Eventi>({
+  content_type: "eventi",
+});
 
 
 ---
 
 <Layout title="Progetti">
   <div class="container mx-auto">
+   {events &&
+    <Sectionhead>
+      <Fragment slot="title">Eventi</Fragment>
+      <Fragment slot="desc">Prossimamente</Fragment>
+    </Sectionhead>
+   }
+    {events.items.map((item) => (
+        
+      <Event entry={item} />
+    ))}
+
+
+
     <Sectionhead>
       <Fragment slot="title">Progetti</Fragment>
-      <Fragment slot="desc">{descrizione}
-        
-      </Fragment>
+      <Fragment slot="desc">Storico progetti</Fragment>
+      <Fragment slot="desc">{descrizione}</Fragment>
     </Sectionhead>
     <main class="mt-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
