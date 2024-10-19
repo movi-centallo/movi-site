@@ -3,12 +3,7 @@ import { Image } from "astro:assets";
 import heroImage from "assets/noi.webp"; // Path to the image in the static folder
 ---
 
-<!-- Further improvements: 
-  - Add Centallo to the title
-  - Make the mobile version 
-  - Add texture on Image
-  - Add margin to the bottom
--->
+
 <div class="hero max-h-screen py-4">
   <div class="hero-content p-0 gap-x-20  flex-col-reverse lg:flex-row-reverse">
     <Image
@@ -19,9 +14,9 @@ import heroImage from "assets/noi.webp"; // Path to the image in the static fold
     quality="high"
     
     class="max-h-screen rounded-lg shadow-xl" /> 
-    <div class="flex flex-column gap-2.5 ">
+    <div class="flex flex-col gap-2.5 ">
       <h1 class="text-5xl font-bold">Movimento Giovanile</h1>
-      <button class="inline-flex w-fit items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10"> <img src="/img/pin.gif" class="w-7 mr-1"></img> <a href="https://www.google.com/maps/place/MOVImento+Giovanile/@44.4984207,7.5855212,17z/data=!3m1!4b1!4m6!3m5!1s0x12cd4316e0bba1df:0xc59b18dfbe93f772!8m2!3d44.4984207!4d7.5855212!16s%2Fg%2F11c6tvcmg9?entry=ttu&g_ep=EgoyMDI0MDkyMi4wIKXMDSoASAFQAw%3D%3D" class="no-underline blank"> Centallo </a></button>
+     
      
       
       <p class="py-6">
