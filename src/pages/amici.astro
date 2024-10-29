@@ -19,7 +19,7 @@ const amici = [
     name: "OfficineLux",
     caption: "Da ormai diciotto anni il Circolo si occupa di promuovere la conoscenza e la fruizione del cinema d’essai e di favorire la diffusione di opere dall’elevato valore culturale. La scelta è rivolta certamente alla valorizzazione della produzione italiana, ma non trascura sguardi attenti al panorama europeo e mondiale.",
     link: "http://www.cineclublumiere.it/chisiamo.php",
-    logo: "http://www.cineclublumiere.it/img/logo.gif",
+    logo: undefined,
     tag: "associazione"
   },
   {
@@ -88,13 +88,15 @@ const amici = [
     <div class="grid md:grid-cols-3 gap-5 mt-8">
       {amici.map((item) => 
       <div class="card bg-base-100 w-96 shadow-xl">
+        {item.logo &&
         <figure class="h-20 w-full p-1">
-          <img
+        
+        <img
         src={item.logo}
         alt={item.name}
         class="object-contain w-full h-full"
           />
-        </figure>
+        </figure>}
         <div class="card-body">
           <h2 class="card-title"><a href={item.link} target="_blank"  class="inline-flex items-center gap-1 underline underline-offset-4	hover: underline-offset-7">
             <span>{item.name}</span>
