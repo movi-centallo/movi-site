@@ -19,13 +19,7 @@ const entries = await contentfulClient.getEntries<Eventi>({
 <Layout title="Movi Centallo">
   <div class="container mx-auto px-5">
     <Hero />
-    <h1 class="text-3xl font-bold pb-6 underline decoration-amber-500/30">Prossimi eventi</h1>
-    {entries && entries.items.map((item) => (
-      <Event entry={item} />
-    ))}
-    
-    <Introgrid /> 
-
+    <Introgrid />
     <Blogpreview />
   </div>  
   
