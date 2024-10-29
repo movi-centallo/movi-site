@@ -85,26 +85,27 @@ const amici = [
       </Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-3 gap-5 mt-8">
       {amici.map((item) => 
-      <div class="card card-side bg-base-100 shadow-xl">
-        
+      <div class="card bg-base-100 w-96 shadow-xl">
+        <figure class="h-20 w-full p-1">
           <img
-            src={item.logo}
-            alt=""
-            class="mt-4 mx-3 h-12 w-fit"
-            />
-        
+        src={item.logo}
+        alt={item.name}
+        class="object-contain w-full h-full"
+          />
+        </figure>
         <div class="card-body">
-          <h2 class="card-title"><a href={item.link} class="flex items-center decoration-sky-500/30 underline-offset-2 text-black hover:underline-offset-4" target="_blank">{item.name}<Icon name="jam:arrow-up-right"/></a><div class="badge badge-primary"></div></h2>
-          <p>{item.caption}</p>
+          <h2 class="card-title"><a href={item.link} target="_blank"  class="inline-flex items-center gap-1 underline underline-offset-4	hover: underline-offset-7">
+            <span>{item.name}</span>
+            <Icon  name="ri:arrow-right-up-line" /></a></h2>
 
-          
+          <p>{item.caption}</p>
+          <div class="card-actions justify-start">
+            <div class="badge badge-outline mt-1 ">{item.tag}</div>
+          </div>
         </div>
-        <div class="card-actions justify-start mb-4 mx-3">
-          <div class="badge badge-accent badge-outline">{item.tag}</div>
-        </div>
-      </div>)}
-    </div>
+      </div>
+      )}
   </Container>
 </Layout>

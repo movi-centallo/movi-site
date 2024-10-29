@@ -9,11 +9,11 @@ const monthNames = [
     "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"
 ];
 ---
-<section class="my-20">
-    {title && <h1 class="text-3xl font-bold pb-6 underline decoration-pink-500/30">{title}</h1>}
+<section class="my-5">
+    
     <div class="lg:flex drop-shadow-lg rounded-xl">
-      <div class="bg-blue-600 rounded-l-lg lg:w-2/12 py-4 shadow-inner">
-        <div class="text-center tracking-wide">
+      <div class="bg-blue-600 rounded-l-lg lg:w-2/12 py-5 shadow-inner">
+        <div class="text-center tracking-wide px-3">
           <div class="text-white font-bold text-4xl">{entry.fields.startingDate.getDate()}</div>
           <div class="text-white font-normal text-2xl">
             {monthNames[entry.fields.startingDate.getMonth()]} {entry.fields.startingDate.getFullYear()}
