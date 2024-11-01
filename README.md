@@ -4,6 +4,31 @@ Astroship is a free starter astro website template for saas, startups, marketing
 
 This Free Template is sponsored by [Web3Templates](https://web3templates.com)
 
+##  Feature to be developed
+    [x] Progetto 
+    [] Chi siamo: da sviluppare interamente 
+    [] Amici del movi: chi aggiungere e chi cambiare
+    [] Logo social
+    [] Pagina Chi siamo: spazi e associazione
+    [] Posizione Movi a Centallo
+    [] Implementare storico progetti (edizioni)
+    [] Inserire dentro la categoria anche la caption
+    [] Inserire nel footer i link ai social
+    [] Pagina per tesseramento
+    [] Nel footer mail e indirizzo
+    [] Progetti con foto
+    [] Value proposition per ogni categoria
+    [] Aggiungere sezione 'Prossimi eventi'
+    [] CTA: home/pagina progetti/contatti
+
+## Fix 
+   
+    [] Fix della hero 
+    [] Fix immagini amici
+    [x] Fix copy e tag in amici del movi
+
+
+
 ## Live Demo
 
 **[https://astroship.web3templates.com/](https://astroship.web3templates.com/)**

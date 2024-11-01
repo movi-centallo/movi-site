@@ -1,31 +1,24 @@
 ---
-import { Picture } from "astro:assets";
-
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
-
-const heroImage = "/img/noi.jpg"; // Path to the image in the static folder
+import { Image } from "astro:assets";
+import heroImage from "assets/noi.webp"; // Path to the image in the static folder
 ---
 
-<!-- Further improvements: 
-  - Add Centallo to the title
-  - Make the mobile version 
-  - Add texture on Image
-  - Add margin to the bottom
--->
-<div class="hero max-h-screen py-4">
-  <div class="hero-content p-0 gap-x-20  flex-col-reverse lg:flex-row-reverse">
-    <img
+
+<div class="hero py-4">
+  <div class="hero-content p-0 gap-x-20 flex-col-reverse lg:flex-row-reverse">
+    <Image
     src={heroImage}
-    class="max-h-screen rounded-lg shadow-xl" />
-    <div>
+    alt="Movi Centallo"
+    width={1920}
+    height={1080}
+    quality="high"    
+    class="max-h-screen rounded-lg shadow-xl" /> 
+    
+    <div class="flex flex-col gap-2.5 ">
       <h1 class="text-5xl font-bold">Movimento Giovanile</h1>
-      <span class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10"> <img src="/img/pin.gif" class="w-7 mr-1"></img>  Centallo</span>
-     
-      
       <p class="py-6">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
+        Siamo un'associazione che nasce nel cuore di Centallo nel 1989, come luogo di aggregazione della comunità Centallese negli storici spazi del Movi.
+
       </p>
       
     </div>

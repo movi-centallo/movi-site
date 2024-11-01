@@ -1,18 +1,26 @@
 ---
-import Container from "@components/container.astro";
-import Cta from "@components/cta.astro";
-import Features from "@components/features.astro";
-import Hero from "@components/newHero.astro";
-import Logos from "@components/logos.astro";
+import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
-import IntroGrid from "@components/introgrid.astro";
 import Introgrid from "@components/introgrid.astro";
-import Manutenzione from "./manutenzione.astro";
+import Blogpreview from "@components/blogpreview.astro";
+//Event import
+import { contentfulClient } from "../lib/contentful";
+import Event from "../components/event.astro";
+import type Eventi from "../lib/types.ts"
+
+
+const entries = await contentfulClient.getEntries<Eventi>({
+  content_type: "eventi",
+});
+
+
 ---
 
 <Layout title="Movi Centallo">
-  <div class="container mx-auto">
-    <Manutenzione />
+  <div class="container mx-auto px-5">
+    <Hero />
+    <Introgrid />
+    <Blogpreview />
   </div>  
   
 </Layout>

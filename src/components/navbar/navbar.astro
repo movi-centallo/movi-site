@@ -5,26 +5,25 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
+
 {
     title: "Progetti",
     path: "/progetti",
   },
   {
-    title: "Chi siamo",
-    path: "/contact",
-  },
-  {
     title: "Contatti",
     path: "/contatti",
-  } 
+  }, 
+ 
+  
  
 ];
 ---
 
-<Container>
-  <header class="flex flex-col lg:flex-row justify-start items-center mt-4">
+<div class="container mx-auto px-5">
+  <header class=" flex flex-col lg:flex-row justify-start items-center gap-6 mt-4">
     <Astronav>
-      <div class="flex w-full basis-2/6 lg:w-auto items-center justify-between">
+      <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg">
           <img src="/img/MoviLogo.png" alt="Logo" class="w-36" />
         </a>
@@ -33,7 +32,7 @@ const menuitems = [
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
+        <ul class="flex flex-col lg:flex-row lg:gap-3 pl-0">
           {
             menuitems.map((item, index) => (
               <>              
@@ -41,7 +40,7 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-left text-gray-600 hover:text-gray-900">
                       <span> {item.title}</span>
                      
                     </a>
@@ -56,4 +55,4 @@ const menuitems = [
     </Astronav>
     
   </header>
-</Container>
+</div>

@@ -4,7 +4,6 @@ import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
 import '@fontsource-variable/bricolage-grotesque';
-import 'bootstrap/dist/css/bootstrap.css'
 
 
 
@@ -22,38 +21,37 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
 ---
 
 <!DOCTYPE html>
 <html lang="it" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width">
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    
+
+
     <meta name="generator" content={Astro.generator} />
     
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="Siamo un'associazione che nasce nel cuore di Centallo nel 1989, come luogo di aggregazione della comunità Centallese negli storici spazi del Movi."
       canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
+
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
+          title: `Movimento Giovanile Centallo`,
           title: `Movimento Giovanile | Centallo`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Movi",
         },
       }}
     />
