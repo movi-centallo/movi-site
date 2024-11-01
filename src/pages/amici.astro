@@ -4,7 +4,7 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import PricingCard from "@components/pricing.astro";
 import { Icon } from 'astro-icon/components'
-
+import Picture from "astro/components/Picture.astro";
 
 
 const amici = [
@@ -17,9 +17,9 @@ const amici = [
   },
   {
     name: "OfficineLux",
-    caption: "Da ormai diciotto anni il Circolo si occupa di promuovere la conoscenza e la fruizione del cinema d’essai e di favorire la diffusione di opere dall’elevato valore culturale. La scelta è rivolta certamente alla valorizzazione della produzione italiana, ma non trascura sguardi attenti al panorama europeo e mondiale.",
+    caption: "Da diciotto anni l’associazione si occupa di promuovere la conoscenza e la fruizione del cinema d’essai e di favorire la diffusione di opere dall’elevato valore culturale. La scelta a produzioni italiane, europee e mondiali, ma anche spettacoli di teatro e rassegne inclusive per i centri diurni per disabili.",
     link: "http://www.cineclublumiere.it/chisiamo.php",
-    logo: undefined,
+    logo: "img/cinema.gif",
     tag: "associazione"
   },
   {
@@ -55,20 +55,20 @@ const amici = [
     caption: "Avis è l’associazione italiana dei donatori di sangue, attiva nella promozione della donazione volontaria e gratuita di sangue.",
     link: "https://www.avis.it/",
     logo: "https://www.avis.it/wp-content/uploads/2023/04/MARCHIO_AVIS.svg", 
-    tag: "Organizzazione di volontariato"
+    tag: "organizzazione di volontariato"
   },
   {
     name: "Croce Rossa Centallo",
     caption: "La Croce Rossa Italiana sezione di Centallo si impegna a fornire assistenza sanitaria, soccorso e promuove attività sociali per il benessere della comunità.",
     link: "https://www.cricentallo.it/",
     logo: "https://www.cricentallo.it/wp-content/uploads/2021/12/Cri-Centallo-Logo.png",
-    tag: "Organizzazione di volontariato"
+    tag: "organizzazione di volontariato"
   },
   {
     name: "Centallo Viva",
     caption: "Centallo Viva è un'associazione locale impegnata nella promozione del benessere della comunità e nella realizzazione di eventi culturali e sociali.",
     link: "https://www.facebook.com/p/Centallo-Viva-100064720027556/",
-    logo: "https://scontent-mxp1-1.xx.fbcdn.net/v/t39.30808-6/391728292_724355689731759_9209191193475198739_n.jpg?stp=cp6_dst-jpg&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=wnmsXb7DHrAQ7kNvgHx0K3_&_nc_ht=scontent-mxp1-1.xx&_nc_gid=AyrdyPvCzhdHQTCBUZRwxeL&oh=00_AYByuNR0dzTlH5nZUEXbN8yvaKIh3CY67BAwgPfaMAYQ9A&oe=6709B808", 
+    logo: "img/centalloviva.png", 
     tag: "proloco"
   }
 ];
@@ -81,21 +81,23 @@ const amici = [
     <Sectionhead>
       <Fragment slot="title">Amici del Movi</Fragment>
       <Fragment slot="desc">
-        Associazioni ed enti che supportano da sempre il Movi
+        Associazioni ed enti che supportano e collaborano attivamente con il Movi
       </Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-3 gap-5 mt-8">
       {amici.map((item) => 
-      <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card bg-base-100 w-96 shadow-xl ">
         {item.logo &&
-        <figure class="h-20 w-full p-1">
+        <figure class="h-20 w-full p-1 pt-3 text-left ">
         
         <img
-        src={item.logo}
-        alt={item.name}
-        class="object-contain w-full h-full"
-          />
+          src={item.logo}
+          width={1920}
+          height={1080}
+          alt={item.name}
+          class="object-contain w-full h-full"
+        />
         </figure>}
         <div class="card-body">
           <h2 class="card-title"><a href={item.link} target="_blank"  class="inline-flex items-center gap-1 underline underline-offset-4	hover: underline-offset-7">
