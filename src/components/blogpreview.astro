@@ -24,7 +24,7 @@ const recentBlogEntries = publishedBlogEntries.slice(0, 4);
         {
           recentBlogEntries.map((blogPostEntry, index) => (
             <li>
-              <a href={`/blog/${blogPostEntry.slug}`}>
+              <a href={`/progetti/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Picture
                     src={blogPostEntry.data.image.src}
