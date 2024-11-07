@@ -9,16 +9,40 @@ import Event from "../components/event.astro";
 import type Eventi from "../lib/types.ts"
 
 
-const entries = await contentfulClient.getEntries<Eventi>({
+const rawEntries = await contentfulClient.getEntries<Eventi>({
   content_type: "eventi",
 });
 
+
+const entries = rawEntries.items.filter((x) => {
+  return new Date(x.fields.endDate) > new Date();
+});
+
+entries.sort((a, b) => {
+   return new Date(a.fields.endDate).getTime() - new Date(b.fields.startingDate).getTime();
+});
 
 ---
 
 <Layout title="Movi Centallo">
   <div class="container mx-auto px-5">
+
     <Hero />
+    <section >
+     
+      {entries.length &&
+        <h1 class="text-3xl font-bold pb-6 underline decoration-orange-500/30">Prossimi eventi</h1>
+        <ul class="grid gap-6 mt-5 mx-auto">
+        
+        {entries.map((item) => (
+   
+           <li> <Event entry={item} /> </li> 
+       ))}
+       
+
+     </ul>}
+      
+    </section>
     <Introgrid />
     <Blogpreview />
   </div>  
