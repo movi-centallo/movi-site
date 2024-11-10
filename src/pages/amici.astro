@@ -87,16 +87,15 @@ const amici = [
 
     <div class="grid md:grid-cols-3 gap-5 mt-8">
       {amici.map((item) => 
-      <div class="card bg-base-100 w-96 shadow-xl ">
+      <div class="card bg-base-100 shadow-xl">
         {item.logo &&
-        <figure class="h-20 w-full p-1 pt-3 text-left ">
-        
+        <figure class="h-20 w-full p-1 mt-5">
         <img
           src={item.logo}
-          width={1920}
+          
           height={1080}
           alt={item.name}
-          class="object-contain w-full h-full"
+          class="object-contain h-full"
         />
         </figure>}
         <div class="card-body">
