@@ -30,11 +30,11 @@ entries.sort((a, b) => {
     <Hero />
     <section >
      
-      {entries.length &&
+      {!entries &&
         <h1 class="text-3xl font-bold pb-6 underline decoration-orange-500/30">Prossimi eventi</h1>
         <ul class="grid gap-6 mt-5 mx-auto">
         
-        {entries.map((item) => (
+        {!entries && entries.map((item) => (
    
            <li> <Event entry={item} /> </li> 
        ))}
