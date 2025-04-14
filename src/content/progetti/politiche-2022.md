@@ -3,7 +3,7 @@
   title: "Dibattito politico"
   snippet: ""
   image: {
-    src: "/img/progetti/bagna-cauda-24.jpg",
+    src: "/img/progetti/dibattito2022.jpg",
     alt: "Bagna cauda movi"
   }
   publishDate: "2022-09-22"
