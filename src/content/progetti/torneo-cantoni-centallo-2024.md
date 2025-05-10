@@ -6,7 +6,7 @@
     src: "/img/progetti/torneo-cantoni-24.jpg",
     alt: "Torneo Cantoni Centallo 2024"
   }
-  publishDate: "2025-04-18"
+  publishDate: "2024-07-21"
   category: "SPORT"
   tags: ["torneo", "comunità"]
 ---
