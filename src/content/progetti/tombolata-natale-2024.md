@@ -21,7 +21,6 @@ Dopo il momento di piacevole convivialità, il gioco è proseguito. Altri premi,
 
 Dagli organizzatori trapela entusiasmo e soddisfazione e, mai come questa volta, un sentito ringraziamento agli gli sponsor che hanno collaborato (non so se volete scriverli). Altre parole di gratitudine sono state rivolte ai giocatori che hanno voluto trascorrere qualche ora insieme.
 Con questa serata si è concluso un altro anno di attività organizzate e proposte dal Movi di Centallo. A tutti gli amici e ai collaboratori l'augurio migliore è quello di ritrovarsi presto. Altre nuove attività bollono in pentola per il 2025. 
-Le ragazze che hanno “creato” questo spazio di cultura hanno detto che «È iniziato dal sogno di tre amiche e ora è diventato un momento di incontro e scambio tra generazioni». E così continua ad accadere ogni due mesi. Come una favola.
 
 
 
