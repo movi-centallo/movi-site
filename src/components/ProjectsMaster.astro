@@ -45,7 +45,7 @@ const { entries, descrizione } = Astro.props;
             <li>
               <a href={`/progetti/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <Picture
+                  <img
                     src={blogPostEntry.data.image.src}
                     alt={blogPostEntry.data.image.alt}
                     sizes="(max-width: 800px) 100vw, 800px"
