@@ -2,28 +2,28 @@
   {
     "title": "Sport",
     "caption": "Promuoviamo lo sport come mezzo di aggregazione e crescita per i giovani.",
-    "img_link": "img/sport.jpg",
+    "img_link": "/src/assets/img/sport.jpg",
     "articles_link": "categorie-progetti/sport",
     "ico": "basketball"
   },
   {
     "title": "Comunità",
     "caption": "Favoriamo la coesione sociale attraverso eventi e iniziative comunitarie.",
-    "img_link": "img/comunita.jpg",
+    "img_link": "/src/assets/img/comunita.jpg",
     "articles_link": "categorie-progetti/comunità",
     "ico": "users-alt"
   },
   {
     "title": "Cultura",
     "caption": "Valorizziamo la cultura con iniziative che stimolano la creatività e la condivisione di conoscenze",
-    "img_link": "img/club-libro.jpg",
+    "img_link": "/src/assets/img/club-libro.jpg",
     "articles_link": "categorie-progetti/cultura",
     "ico": "books"
   },
   {
     "title": "Educazione",
     "caption": "Offriamo opportunità formative con workshop e corsi per tutti",
-    "img_link": "img/comunita.jpg",
+    "img_link": "/src/assets/img/comunita.jpg",
     "articles_link": "categorie-progetti/educazione",
     "ico": "workshop"
   }
