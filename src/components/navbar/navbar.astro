@@ -18,6 +18,11 @@ const menuitems = [
     title: "Amici",
     path: "/amici",
   }, 
+  {
+    title: "Cantoni 🔥",
+    path: "https://cantoni.movicentallo.it",
+    external: false
+  }
  
   
  
@@ -44,7 +49,9 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-left text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-left text-gray-600 hover:text-gray-900"
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}>
                       <span> {item.title}</span>
                      
                     </a>
