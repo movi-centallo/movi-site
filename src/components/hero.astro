@@ -1,43 +1,72 @@
 ---
-import { Image } from "astro:assets";
-import heroImage from "assets/noi.webp"; // Path to the image in the static folder
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
+import Container from "./Container.astro"
+const cantoniImageSizeW = "563";
+const cantoniImageSizeH = "965" ;
+
 ---
+<Container>
+<div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
+    <div class="row items-start pb-8 md:w-6/12 md:pb-20">
+        <div class="text-left space-y-3">
+            <span class="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-purple-700/10 ring-inset">2a edizione</span>
 
-<main
-  class="flex flex-col-reverse lg:flex-row-reverse items-center gap-x-10 pt-16  md:pt-4 ">
-  <div class="py-6 basis-3/4">
-    <Image
-      src={heroImage}
-      alt="Foto movi"
-      width={1920}
-      height={1080}
-      quality="80"
-      format="webp"     
-      class="max-h-screen rounded-lg shadow-xl w-full"
-    />
-  </div>
-  <div class="basis-1/4">
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Movimento Giovanile
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Siamo un'associazione che nasce nel cuore di Centallo nel 1989, come luogo di aggregazione della comunità Centallese negli storici spazi del Movi.
-    </p>
-    
-  </div>
-</main>
+            <h1 class="text-7xl font-bold leading-none md:text-8xl">TORNEO DEI CANTONI</h1>
 
+            <p class="mt-6 mb-8  text-xl font-normal leading-7 sm:mb-12">La sfida sportiva tra gli 8 cantoni di Centallo</p>
+            
+            <div class="relative flex flex-col items-start md:flex-row">
+                <div class="row items-start py-5 md:pr-5 md:w-10/12 md:py-5">
+                    <div class="text-center md:text-left space-y-3 bg-lime">
+                        <h2 class="text-4xl font-medium leading-none sm:text-5xl">18-19-20 luglio</h2>
+                    </div>
+                    <div class="flex items-center py-5 md:w-10/12 md:py-10">
+                        <p class="hidden text-xl font-normal leading-7 text-center md:text-left">📍 Movi centallo</p>
+                        
+<div class="justify-center items-center gap-[15px] inline-flex">
+    <a href="https://www.google.com/maps/d/u/0/embed?mid=1jq1X5sbZGnMd9IAtsKtBllyM82LBztQ&ehbc=2E312F&ll=44.498632220998694%2C7.600097221615947&z=12" class=" underline hover:underline-offset-4 text-black text-xl font-normal leading-7">Scopri la mappa</a>
+    <img src="/services/agc.svg" alt="arrow">
+</div>
+                    </div>
+                </div>
+                
+            </div>
+            
+               
+            
+        </div>
+    </div>
+    <div class="flex items-center py-3 md:w-6/12 md:pb-20 md:pt-0">
+        <img src="/Hero.png" width="100%" alt="Hero"/>
+    </div>
+</div>
 
-<!-- <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
-      </Link> -->
+<div class="hidden flex-row items-center">
+    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
+        <div class="p-3  grayscale transition duration-200 hover:grayscale-0">
+            <img src="./cantoni/aia.png" class="h-12 w-auto mx-auto" loading="lazy"  width={cantoniImageSizeW}   height={cantoniImageSizeH} />
+        </div>
+        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+            <img src="./cantoni/canton-levante.png" class="h-12 w-auto mx-auto" loading="lazy"  width={cantoniImageSizeW} height={cantoniImageSizeH} />
+        </div>
+        <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+            <img src="./cantoni/canton-ponente.png" class="h-9 w-auto m-auto" loading="lazy"  width={cantoniImageSizeW} height={cantoniImageSizeH} />
+        </div>
+        <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+            <img src="./cantoni/centro.png" class="h-9 w-auto m-auto" loading="lazy"  width="" height="" />
+        </div>
+        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+            <img src="./cantoni/oltre-grana.png" class="h-12 w-auto mx-auto" loading="lazy"  width="" height="" />
+        </div>
+        <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+            <img src="./cantoni/roata-chiusani.png" class="h-8 w-auto m-auto" loading="lazy" width="" height="" />
+        </div>
+        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+            <img src="./cantoni/san-biagio.png" class="h-12 w-auto mx-auto" loading="lazy"  width="" height="" />
+        </div>
+        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+            <img src="./cantoni/scuderia.png" class="h-12 w-auto mx-auto" loading="lazy"  width="" height="" />
+        </div>
+    </div>
+</div>
+
+</Container>
