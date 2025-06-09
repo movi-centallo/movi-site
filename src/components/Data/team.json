@@ -32,7 +32,7 @@
             "bid": "accordion-open-body-1",
             "target": "#accordion-open-body-1",
             "title": "Pallavolo",
-            "description": "", 
+            "description": "Le partite si compongono di 3 set da 8 minuti ciascuno. Si gioca 6 contro 6; ogni squadra dovrà avere almeno due ragazze in campo e potrà schierare al massimo due tesserati FIPAV contemporaneamente sul terreno di gioco.\n Viene utilizzato il regolamento ufficiale FIPAV, escludendo le seguenti infrazioni: fallo di posizione e fallo di doppio palleggio", 
             "img": "pallavolo.svg"
         },
         {
@@ -41,7 +41,7 @@
             "bid": "accordion-open-body-2",
             "target": "#accordion-open-body-2",
             "title": "Roverino",
-            "description": "", 
+            "description": "Le partite si compongono di due tempi da 7 minuti ciascuno, separati da un intervallo; tra un tempo e l’altro si effettua il cambio del campo. Si gioca 7 contro 7 (di cui 6 giocatori di movimento e 1 “paliere”), con un minimo di due ragazze in campo.", 
             "img": "roverino.svg"
         },
         {
@@ -50,7 +50,7 @@
             "bid": "accordion-open-body-3",
             "target": "#accordion-open-body-3",
             "title": "Bocce",
-            "description": "",
+            "description": "Le partite si compongono di una sola sfida ai 13 punti, nella quale si affrontano due squadre di due o tre giocatori a discrezione del cantone. Ogni squadra ha a disposizione sei bocce: tre a testa se si gioca in due, due a testa se si gioca in tre.\n N.B.:Non si possono effettuare sostituzioni di giocatori a partita in corso.",
             "img": "bocce.svg"
         },
         {
@@ -59,7 +59,7 @@
             "bid": "accordion-open-body-4",
             "target": "#accordion-open-body-4",
             "title": "Calcio con le bolle",
-            "description": "",
+            "description": "Le partite si compongono di due tempi da 7 minuti ciascuno, separati da un intervallo; tra un tempo e l’altro si effettua il cambio del campo. Si gioca 4 contro 4. Ogni giocatore in campo deve indossare correttamente la bolla gonfiabile, inserendo le braccia all’interno delle apposite spalline (che devono essere regolate a seconda del giocatore) e mantenendo una presa ben salda sulle maniglie.",
             "img": "calcio.svg"
         },
         {
@@ -74,21 +74,21 @@
         }, 
          {
             "id": "07",
-            "hid": "accordion-open-heading-6",
-            "bid": "accordion-open-body-6",
-            "target": "#accordion-open-body-6",
+            "hid": "accordion-open-heading-7",
+            "bid": "accordion-open-body-7",
+            "target": "#accordion-open-body-7",
             "title": "Tiro alla fune",
-            "description": "",
+            "description": "Il torneo di tiro alla fune ha luogo interamente la domenica ed è esclusivamente a eliminazione diretta, partendo dai quarti fino ad arrivare alla finale e alla finalina per il terzo e il quarto posto. I partecipanti alla competizione devono essere dichiarati da ogni cantone prima dell’inizio delle gare domenicali.",
             "img": "fune.svg"
 
         }, 
         {
             "id": "08",
-            "hid": "accordion-open-heading-6",
-            "bid": "accordion-open-body-6",
-            "target": "#accordion-open-body-6",
+            "hid": "accordion-open-heading-8",
+            "bid": "accordion-open-body-8",
+            "target": "#accordion-open-body-8",
             "title": "Staffettone",
-            "description": "",
+            "description": "Lo Staffettone sarà l’ultima competizione del torneo e si svolgerà in gara unica, con tutte le squadre in campo contemporaneamente. A seguire la gara sarà presente una squadra arbitrale che ne supervisionerà lo svolgimento. La gara consiste in una corsa su di un percorso ad anello, lungo il quale vengono posti ostacoli di varia natura che i concorrenti devono superare. Ciascun cantone può scegliere una squadra da quattro a otto atleti, che dovrà essere comunicata all’Organizzazione del torneo prima dell’inizio della corsa. La gara è suddivisa in otto frazioni, e due frazioni consecutive non possono essere corse dal medesimo giocatore.",
             "img": "staffettone.svg"
         }
     ]
