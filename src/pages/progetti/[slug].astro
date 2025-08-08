@@ -1,64 +1,97 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
+import { contentfulClient } from "../../lib/contentful";
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import type { Document } from '@contentful/rich-text-types';
 
-// Generate a new path for every collection entry
+// Generate static paths from Contentful entries
 export async function getStaticPaths() {
-  const progettiEntries = await getCollection("progetti");
-  return progettiEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  const res = await contentfulClient.getEntries({
+    content_type: "progetti",
+    select: ["fields.slug"],
+    limit: 1000,
+  });
+
+  return res.items
+    .filter((it: any) => it.fields?.slug)
+    .map((it: any) => ({
+      params: { slug: it.fields.slug },
+      props: { slug: it.fields.slug },
+    }));
 }
 
-// Get the entry directly from the prop on render
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+// Fetch entry from Contentful by slug
+const { slug } = Astro.props;
+const res = await contentfulClient.getEntries({
+  content_type: "progetti",
+  "fields.slug": slug,
+  limit: 1,
+});
+
+if (!res.items.length) {
+  throw new Error(`Progetto not found for slug: ${slug}`);
+}
+
+const item = res.items[0];
+const fields = item.fields;
+
+// Map metadata (keep same semantics as local markdown)
+const title = String(fields.title || "");
+const category = String(fields.category || "");
+const publishDate = fields.publishDate ? new Date(String(fields.publishDate)) : new Date();
+const tags = Array.isArray(fields.tags) ? fields.tags : [];
+
+// Article body: convert Rich Text to HTML
+const content = fields.content || fields.body || "";
+console.log(tags)
+
+// Handle different content types from Contentful
+let htmlContent;
+try {
+  if (content && typeof content === 'object') {
+    // Try to render as Rich Text document
+    htmlContent = documentToHtmlString(content as Document);
+  } else if (typeof content === 'string') {
+    // Plain text field - just use as HTML
+    htmlContent = content ? `<p>${content}</p>` : "<p>Nessun contenuto disponibile.</p>";
+  } else {
+    htmlContent = "<p>Nessun contenuto disponibile.</p>";
+  }
+} catch (error) {
+  console.log("Error rendering content:", error);
+  htmlContent = `<pre>${JSON.stringify(content, null, 2)}</pre>`;
+}
 ---
 
-<Layout title={entry.data.title}>
+<Layout title={title}>
   <Container>
     <div class="mx-auto max-w-3xl mt-14">
       <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-        {entry.data.category}
+        {category}
       </span>
-      <h1
-        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
-        {entry.data.title}
+      <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+        {title}
       </h1>
       <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        
-        
-        <time
-          class="text-gray-400"
-          datetime={entry.data.publishDate.toISOString()}>
-          {entry.data.publishDate.toLocaleDateString("it-IT", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
+        <time class="text-gray-400" datetime={publishDate.toISOString()}>
+          {publishDate.toLocaleDateString("it-IT", { year: "numeric", month: "long", day: "numeric" })}
         </time>
         <span class="text-gray-400 hidden md:block">•</span>
         <div class="w-full md:w-auto flex flex-wrap gap-3">
-          {
-            entry.data.tags.map((tag) => (
-              <span class="text-sm text-gray-500">#{tag}</span>
-            ))
-          }
+          {tags.map((tag) => (
+            <span class="text-sm text-gray-500">#{tag}</span>
+          ))}
         </div>
       </div>
     </div>
 
     <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
-      <Content />
+      <div set:html={htmlContent}></div>
     </div>
+
     <div class="text-center mt-8">
-      <a
-        href="/progetti"
-        class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
-        >← Torna ai progetti</a
-      >
+      <a href="/progetti" class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition">← Torna ai progetti</a>
     </div>
   </Container>
 </Layout>

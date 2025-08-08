@@ -10,7 +10,7 @@ import type Eventi from "../lib/types.ts";
 
 const { entries, descrizione } = Astro.props;
 
-
+console.log("Entries:", JSON.stringify(entries, null, 2));
 
 
 /*
@@ -41,47 +41,58 @@ const { entries, descrizione } = Astro.props;
     <main class="mt-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
-          entries.map((blogPostEntry, index) => (
-            <li>
-              <a href={`/progetti/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <img
-                    src={blogPostEntry.data.image.src}
-                    alt={blogPostEntry.data.image.alt}
-                    sizes="(max-width: 800px) 100vw, 800px"
-                    width={800}
-                    height={600}
-                    loading={index <= 2 ? "eager" : "lazy"}
-                    decoding={index <= 2 ? "sync" : "async"}
-                    class="w-full rounded-md object-cover object-center bg-white"
-                  />
-                  <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-                      {blogPostEntry.data.category}
-                    </span>
+          entries.map((blogPostEntry, index) => {
+            // Contentful image handling
+            const imageUrl = blogPostEntry.fields.image?.fields?.file?.url 
+              ? `https:${blogPostEntry.fields.image.fields.file.url}`
+              : '/img/default-image.jpg'; // fallback image
+            
+            const imageAlt = blogPostEntry.fields.image?.fields?.title 
+              || blogPostEntry.fields.image?.fields?.description 
+              || blogPostEntry.fields.title;
 
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
-                      {blogPostEntry.data.title}
-                    </h2>
+            return (
+              <li>
+                <a href={`/progetti/${blogPostEntry.fields.slug}`}>
+                  <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                    <img
+                      src={imageUrl}
+                      alt={imageAlt}
+                      sizes="(max-width: 800px) 100vw, 800px"
+                      width={800}
+                      height={600}
+                      loading={index <= 2 ? "eager" : "lazy"}
+                      decoding={index <= 2 ? "sync" : "async"}
+                      class="w-full rounded-md object-cover object-center bg-white"
+                    />
+                    <div>
+                      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                        {blogPostEntry.fields.category}
+                      </span>
 
-                    <div class="flex gap-2 mt-3">
-                      
-                      
-                      <time
-                        class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
-                        {blogPostEntry.data.publishDate.toLocaleDateString('it-IT', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
-                      </time>
+                      <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                        {blogPostEntry.fields.title}
+                      </h2>
+
+                      <div class="flex gap-2 mt-3">
+                        
+                        
+                        <time
+                          class="text-gray-400"
+                          datetime={blogPostEntry.fields.publishDate}>
+                            {new Date(blogPostEntry.fields.publishDate).toLocaleDateString('it-IT', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                            })}
+                        </time>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            </li>
-          ))
+                </a>
+              </li>
+            );
+          })
         }
         <li><div role="alert" class="alert shadow-lg mt-5 mx-auto">
           <svg

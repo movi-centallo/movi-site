@@ -1,19 +1,24 @@
 ---
-import { getCollection } from "astro:content";
 import ProjectsMaster from "@components/ProjectsMaster.astro";
+import { contentfulClient } from "../lib/contentful";
+import type Progetti from "../lib/types.ts"
 
 
-
-// Filter blog entries with 'draft: false' & date before current date
-const publishedProject = await getCollection("progetti", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
+const rawEntries = await contentfulClient.getEntries<Progetti>({
+  content_type: "progetti",
 });
 
-// Sort content entries by publication date
-publishedProject.sort(function (a, b) {
-  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+
+
+/*const entries = rawEntries.items
+.filter((x) => {
+  return new Date(x.fields.publishDate) < new Date();
+}).sort(function (a, b) {
+  return b.fields.publishDate.valueOf() - a.fields.publishDate.valueOf();
 });
+*/
 
 ---
 
-<ProjectsMaster entries={publishedProject}></ProjectsMaster>
+<ProjectsMaster entries={rawEntries.items}></ProjectsMaster>
+
