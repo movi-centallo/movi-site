@@ -41,6 +41,7 @@ const title = String(fields.title || "");
 const category = String(fields.category || "");
 const publishDate = fields.publishDate ? new Date(String(fields.publishDate)) : new Date();
 const tags = Array.isArray(fields.tags) ? fields.tags : [];
+const coverImg = fields.image; 
 
 // Article body: convert Rich Text to HTML
 const content = fields.content || fields.body || "";
@@ -86,8 +87,19 @@ try {
       </div>
     </div>
 
-    <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
-      <div set:html={htmlContent}></div>
+    {coverImg &&  (
+      <div class="mx-auto max-w-xl mt-8">
+        <img
+          src={coverImg.fields.file.url}
+          alt={coverImg.fields.title || title}
+          height="400"
+          class="w-full rounded-lg shadow-md"
+          loading="lazy"
+        />
+      </div>
+    )}
+    <div class="mx-auto prose prose-lg mt-8 max-w-3xl">
+      <div class="text-justify" set:html={htmlContent}></div>
     </div>
 
     <div class="text-center mt-8">

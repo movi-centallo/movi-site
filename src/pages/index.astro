@@ -2,17 +2,26 @@
 import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
 import Introgrid from "@components/introgrid.astro";
-import Blogpreview from "@components/blogpreview.astro";
-//Event import
+import ProjectsMaster from "@components/ProjectsMaster.astro";
+import ModalDialog from "@components/ModalDialog.astro";
+
 import { contentfulClient } from "../lib/contentful";
-import Event from "../components/event.astro";
-import type Eventi from "../lib/types.ts"
+import type Progetti from "../lib/types.ts"
 
-
-const entries = await contentfulClient.getEntries<Eventi>({
-  content_type: "eventi",
+const showModal = true; // Cambia a false per nascondere la dialog relativa ai cantoni
+const rawEntries = await contentfulClient.getEntries<Progetti>({
+  content_type: "progetti",
 });
 
+const orderedEntries = {
+  ...rawEntries,
+  items: rawEntries.items
+    .sort((a, b) => {
+      // Ordina per startingDate (ISO string)
+      return new Date(a.fields.startingDate).getTime() - new Date(b.fields.startingDate).getTime();
+    })
+    .slice(0, 4)
+};
 
 ---
 <script>
@@ -31,25 +40,13 @@ const entries = await contentfulClient.getEntries<Eventi>({
   <div class="container mx-auto px-5">
     <!-- Open the modal using ID.showModal() method -->
 
-    <dialog id="my_modal_3" class="modal modal-bottom sm:modal-middle">
-      <div class="modal-box">
-        <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-        </form>
-        <h3 class="text-lg font-bold">Il torneo dei Cantoni sta tornando ⚔️</h3>
-        <p class="py-4">Per scoprire tutto sull'edizione 2025 del torneo dei Cantoni!</p>
-        <div class="modal-action">
-      <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button class="btn btn-accent" onclick="window.open('https://cantoni.movicentallo.it', '_self')">Premi qui</button>
-      </form>
-    </div>
-      </div>
-    </dialog>
+   
+    <ModalDialog show={showModal} />
 
     <Hero />
     <Introgrid />
-    <Blogpreview />
+    <ProjectsMaster entries={orderedEntries.items}></ProjectsMaster>
+
   </div>  
   
 </Layout>
