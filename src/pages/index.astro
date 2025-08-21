@@ -17,10 +17,7 @@ const rawEntries = await contentfulClient.getEntries<Progetti>({
 const orderedEntries = {
   ...rawEntries,
   items: rawEntries.items
-    .sort((a, b) => {
-      // Ordina per startingDate (ISO string)
-      return new Date(b.fields.startingDate).getTime() - new Date(a.fields.startingDate).getTime();
-    })
+    .reverse()
     .slice(0, 2)
 };
 
