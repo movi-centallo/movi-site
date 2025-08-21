@@ -9,6 +9,7 @@ import Sectionhead from "@components/sectionhead.astro";
 const rawEntries = await contentfulClient.getEntries<Progetti>({
   content_type: "progetti",
 });
+rawEntries.items = rawEntries.items.reverse();
 
 
 
