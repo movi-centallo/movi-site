@@ -19,9 +19,9 @@ const orderedEntries = {
   items: rawEntries.items
     .sort((a, b) => {
       // Ordina per startingDate (ISO string)
-      return new Date(a.fields.startingDate).getTime() - new Date(b.fields.startingDate).getTime();
+      return new Date(b.fields.startingDate).getTime() - new Date(a.fields.startingDate).getTime();
     })
-    .slice(0, 4)
+    .slice(0, 2)
 };
 
 ---
