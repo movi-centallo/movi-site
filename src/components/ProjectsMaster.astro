@@ -42,13 +42,13 @@ console.log("Entries:", JSON.stringify(entries, null, 2));
             <a href={`/progetti/${blogPostEntry.fields.slug}`}>
           <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
             <img
-              src={imageUrl}
+              src={imageUrl + '?w=600&h=400&fit=fill&q=75&fm=webp'}
               alt={imageAlt}
-              sizes="(max-width: 800px) 100vw, 800px"
-              width={800}
-              height={600}
-              loading={index <= 2 ? "eager" : "lazy"}
-              decoding={index <= 2 ? "sync" : "async"}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+              width={600}
+              height={400}
+              loading="eager"
+              decoding="sync"
               class="w-full rounded-md object-cover object-center bg-white"
             />
             <div>
