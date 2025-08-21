@@ -9,7 +9,7 @@ import Sectionhead from "@components/sectionhead.astro";
 const rawEntries = await contentfulClient.getEntries<Progetti>({
   content_type: "progetti",
 });
-rawEntries.items = rawEntries.items.reverse();
+rawEntries.items = rawEntries.items.sort((a, b) => new Date(b.fields.publishDate).getTime() - new Date(a.fields.publishDate).getTime());
 
 
 

@@ -17,7 +17,7 @@ const rawEntries = await contentfulClient.getEntries<Progetti>({
 const orderedEntries = {
   ...rawEntries,
   items: rawEntries.items
-    .reverse()
+    .sort((a, b) => new Date(b.fields.publishDate).getTime() - new Date(a.fields.publishDate).getTime())
     .slice(0, 4)
 };
 
@@ -37,7 +37,15 @@ const orderedEntries = {
     <h1 class="text-3xl font-bold pb-6 underline decoration-sky-500/30">I nostri progetti</h1>
     <main class="container"> 
     <ProjectsMaster entries={orderedEntries.items} homepage={true}></ProjectsMaster>
-
+       <div class="text-center mt-16">
+        <a
+          href="/progetti"
+          class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
+          >Vedi tutti i progetti <span class="animate-bounce">→</span></a
+        >
+      </div>  
+    </div>
+  </main>
   </div>  
   
 </Layout>
