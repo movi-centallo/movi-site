@@ -1,0 +1,33 @@
+
+---
+const { showModal = true } = Astro.props;
+---
+
+{showModal && (
+    <>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const modal = document.getElementById('my_modal_3');
+                if (modal) {
+                    // @ts-ignore
+                    modal.showModal();
+                }
+            });
+        </script>
+
+        <dialog id="my_modal_3" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 class="text-lg font-bold">Il torneo dei Cantoni sta tornando ⚔️</h3>
+                <p class="py-4">Per scoprire tutto sull'edizione 2025 del torneo dei Cantoni!</p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn btn-accent" onclick="window.open('https://cantoni.movicentallo.it', '_self')">Premi qui</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </>
+)}

@@ -1,7 +1,9 @@
 ---
 import ProjectsMaster from "@components/ProjectsMaster.astro";
 import { contentfulClient } from "../lib/contentful";
+import Layout from "@layouts/Layout.astro";
 import type Progetti from "../lib/types.ts"
+import Sectionhead from "@components/sectionhead.astro";
 
 
 const rawEntries = await contentfulClient.getEntries<Progetti>({
@@ -19,6 +21,16 @@ const rawEntries = await contentfulClient.getEntries<Progetti>({
 */
 
 ---
+<Layout title="Progetti">
 
-<ProjectsMaster entries={rawEntries.items}></ProjectsMaster>
+  <div class="container mx-auto px-5">
+   <Sectionhead>
+      <Fragment slot="title">Progetti</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
+    <main class="mt-16">
+    <ProjectsMaster entries={rawEntries.items}></ProjectsMaster>
+    </main>
+  </div>
+</Layout>
 
