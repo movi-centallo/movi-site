@@ -7,7 +7,8 @@ Alcune funzioni implementate all'interno del sito:
 - Integrazione con Google Cal per la pubblicazione automatica di eventi (in dettaglio Eventi, in beta)
 - TailwindCSS e DaisyUI per il frontend
 
-
+## Preview
+Il sito è online, distribuito tramite Netlify, ed è accessibile al seguente link www.movicentallo.it
 
 ## Installation
 
